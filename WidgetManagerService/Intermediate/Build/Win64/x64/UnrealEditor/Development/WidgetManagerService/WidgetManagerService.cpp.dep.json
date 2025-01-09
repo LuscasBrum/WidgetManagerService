@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\sehloiro\\projects\\wyzards\\plugins\\widgetmanagerservice\\source\\widgetmanagerservice\\private\\widgetmanagerservice.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\sehloiro\\projects\\wyzards\\plugins\\widgetmanagerservice\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\widgetmanagerservice\\definitions.widgetmanagerservice.h",
+            "d:\\sehloiro\\projects\\wyzards\\plugins\\widgetmanagerservice\\source\\widgetmanagerservice\\public\\widgetmanagerservice.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
