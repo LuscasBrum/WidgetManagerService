@@ -40,10 +40,17 @@ protected:
     UPROPERTY()
     TArray<UBaseWidget*> CreatedWidgets;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WidgetManagerService")
+    bool bUseEditorInitialWidget = true;
+    
     /** The widget class to activate at the beginning of the level. */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WidgetManagerService")
     TSubclassOf<UBaseWidget> InitialWidgetClass;
 
+    /** The widget class to activate at the beginning of the level. (Editor) */
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WidgetManagerService", meta = (EditCondition = "bUseEditorInitialWidget", EditConditionHides))
+    TSubclassOf<UBaseWidget> EditorInitialWidgetClass;
+    
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WidgetManagerService")
 	bool AutoInitializer = true;
 	

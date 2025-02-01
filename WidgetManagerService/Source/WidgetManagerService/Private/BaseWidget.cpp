@@ -9,6 +9,16 @@ void UBaseWidget::SetActive(bool bActive)
 	{
 		bIsActive = bActive;
 		SetVisibility(bIsActive ? ESlateVisibility::Visible : ESlateVisibility::Hidden);
+
+		// Trigger the appropriate Blueprint event
+		if (bIsActive)
+		{
+			OnShow();
+		}
+		else
+		{
+			OnHide();
+		}
 	}
 }
 

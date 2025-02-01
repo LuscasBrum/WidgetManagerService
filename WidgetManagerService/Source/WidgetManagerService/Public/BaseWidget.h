@@ -42,6 +42,18 @@ public:
 	void SetActive(bool bActive);
 
 protected:
+	/**
+	 * Called when the widget is shown. Designed to be overridden in Blueprints.
+	 */
+	UFUNCTION(BlueprintImplementableEvent, Category = "WidgetBase")
+	void OnShow();
+
+	/**
+	 * Called when the widget is hidden. Designed to be overridden in Blueprints.
+	 */
+	UFUNCTION(BlueprintImplementableEvent, Category = "WidgetBase")
+	void OnHide();
+
 	/** The layer of this widget. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WidgetBase")
 	int32 Layer = 0;

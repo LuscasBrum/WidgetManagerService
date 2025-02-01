@@ -58,7 +58,8 @@ UBaseWidget* AWidgetManagerServiceHUD::CreateWidgetInstance(TSubclassOf<UBaseWid
     UBaseWidget* NewWidget = CreateWidget<UBaseWidget>(GetWorld(), WidgetClass);
     if (NewWidget)
     {
-        NewWidget->AddToViewport();
+        NewWidget->SetVisibility(ESlateVisibility::HitTestInvisible); 
+        NewWidget->AddToViewport(NewWidget->GetLayer());
         NewWidget->SetVisibility(ESlateVisibility::Hidden); 
     }
 
@@ -72,12 +73,21 @@ void AWidgetManagerServiceHUD::SetInitialWidget(TSubclassOf<UBaseWidget> WidgetC
 
 void AWidgetManagerServiceHUD::ActivateInitialWidget()
 {
-    if (InitialWidgetClass)
+    TSubclassOf<UBaseWidget> WidgetToActivate = InitialWidgetClass;
+
+#if WITH_EDITOR
+    if (bUseEditorInitialWidget && EditorInitialWidgetClass)
+    {
+        WidgetToActivate = EditorInitialWidgetClass;
+    }
+#endif
+
+    if (WidgetToActivate)
     {
         UWidgetManagerGameSubsystem* WidgetSubsystem = GetWidgetSubsystem();
         if (WidgetSubsystem)
         {
-            WidgetSubsystem->ActivateWidgetByClass(InitialWidgetClass);
+            WidgetSubsystem->ActivateWidgetByClass(WidgetToActivate);
         }
     }
 }

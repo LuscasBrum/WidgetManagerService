@@ -23,23 +23,22 @@ void UWidgetManagerGameSubsystem::ActivateWidget(UBaseWidget* Widget)
     }
 
     int32 Layer = Widget->GetLayer();
+
     if (ActiveWidgetsByLayer.Contains(Layer))
     {
         UBaseWidget* CurrentActiveWidget = ActiveWidgetsByLayer[Layer];
         if (CurrentActiveWidget && CurrentActiveWidget != Widget)
         {
-            if (IsValid(CurrentActiveWidget))
-            {
-                CurrentActiveWidget->SetActive(false);
-                CurrentActiveWidget->SetVisibility(ESlateVisibility::Hidden);
-            }
+            CurrentActiveWidget->SetActive(false);
+            CurrentActiveWidget->SetVisibility(ESlateVisibility::Hidden);
         }
     }
 
     Widget->SetActive(true);
-    Widget->SetVisibility(ESlateVisibility::Visible);
+    Widget->SetVisibility(ESlateVisibility::SelfHitTestInvisible);
     ActiveWidgetsByLayer[Layer] = Widget;
 }
+
 
 void UWidgetManagerGameSubsystem::ActivateWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass)
 {
@@ -64,6 +63,20 @@ void UWidgetManagerGameSubsystem::DisableWidgetByClass(TSubclassOf<UBaseWidget> 
             break;
         }
     }
+}
+
+UBaseWidget* UWidgetManagerGameSubsystem::GetWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass)
+{
+    for (UBaseWidget* Widget : RegisteredWidgets)
+    {
+        if (Widget && Widget->GetClass() == WidgetClass)
+        {
+            return Widget;
+            break;
+        }
+    }
+
+    return nullptr;
 }
 
 void UWidgetManagerGameSubsystem::CleanupInvalidWidgets()

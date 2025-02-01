@@ -28,6 +28,10 @@ public:
     UFUNCTION(BlueprintCallable)
     /** Disable a widget by class */
     void DisableWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
+
+    UFUNCTION(BlueprintCallable)
+    /** Get a widget by class. */
+    UBaseWidget* GetWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
     
     /** Cleans up invalid references to widgets. */
     void CleanupInvalidWidgets();
