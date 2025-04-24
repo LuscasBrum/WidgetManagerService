@@ -1,6 +1,3 @@
-// 
-
-
 #include "BaseWidget.h"
 
 void UBaseWidget::SetActive(bool bActive)
@@ -21,6 +18,10 @@ void UBaseWidget::SetActive(bool bActive)
 		}
 	}
 }
+
+void UBaseWidget::OnShow_Implementation() {}
+
+void UBaseWidget::OnHide_Implementation() {}
 
 
 

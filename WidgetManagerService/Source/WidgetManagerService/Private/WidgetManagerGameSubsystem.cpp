@@ -79,6 +79,20 @@ UBaseWidget* UWidgetManagerGameSubsystem::GetWidgetByClass(TSubclassOf<UBaseWidg
     return nullptr;
 }
 
+UBaseWidget* UWidgetManagerGameSubsystem::GetSubWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass)
+{
+    for (UBaseWidget* Widget : RegisteredWidgets)
+    {
+        if (Widget && Widget->GetClass()->IsChildOf(WidgetClass))
+        {
+            return Widget;
+            break;
+        }
+    }
+
+    return nullptr;
+}
+
 void UWidgetManagerGameSubsystem::CleanupInvalidWidgets()
 {
     RegisteredWidgets.Empty();

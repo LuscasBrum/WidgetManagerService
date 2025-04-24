@@ -1,4 +1,3 @@
-// WidgetManagerGameSubsystem.h
 #pragma once
 
 #include "CoreMinimal.h"
@@ -32,7 +31,8 @@ public:
     UFUNCTION(BlueprintCallable)
     /** Get a widget by class. */
     UBaseWidget* GetWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
-    
+    UBaseWidget* GetSubWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
+
     /** Cleans up invalid references to widgets. */
     void CleanupInvalidWidgets();
 

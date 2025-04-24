@@ -45,13 +45,13 @@ protected:
 	/**
 	 * Called when the widget is shown. Designed to be overridden in Blueprints.
 	 */
-	UFUNCTION(BlueprintImplementableEvent, Category = "WidgetBase")
+	UFUNCTION(BlueprintNativeEvent, Category = "WidgetBase")
 	void OnShow();
 
 	/**
 	 * Called when the widget is hidden. Designed to be overridden in Blueprints.
 	 */
-	UFUNCTION(BlueprintImplementableEvent, Category = "WidgetBase")
+	UFUNCTION(BlueprintNativeEvent, Category = "WidgetBase")
 	void OnHide();
 
 	/** The layer of this widget. */

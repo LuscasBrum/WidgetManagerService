@@ -1,9 +1,7 @@
-// WidgetManagerServiceHUD.cpp
 #include "WidgetManagerServiceHUD.h"
 #include "BaseWidget.h"
 #include "WidgetManagerGameSubsystem.h"
 #include "Blueprint/UserWidget.h"
-#include "Kismet/GameplayStatics.h"
 
 void AWidgetManagerServiceHUD::BeginPlay()
 {
@@ -14,10 +12,12 @@ void AWidgetManagerServiceHUD::BeginPlay()
     {
         WidgetSubsystem->CleanupInvalidWidgets();
     }
+
+    InitializeWidgets();
     
     if (AutoInitializer)
     {
-        InitializeWidgets();
+        ActivateInitialWidget();
     }
 }
 
@@ -44,8 +44,6 @@ void AWidgetManagerServiceHUD::InitializeWidgets()
             }
         }
     }
-
-    ActivateInitialWidget();
 }
 
 UBaseWidget* AWidgetManagerServiceHUD::CreateWidgetInstance(TSubclassOf<UBaseWidget> WidgetClass)

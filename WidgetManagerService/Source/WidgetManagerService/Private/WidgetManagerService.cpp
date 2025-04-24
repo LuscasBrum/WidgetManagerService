@@ -1,5 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "WidgetManagerService.h"
 
 #define LOCTEXT_NAMESPACE "FWidgetManagerServiceModule"
