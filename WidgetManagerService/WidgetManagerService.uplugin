@@ -2,23 +2,28 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "WidgetManagerService",
-	"Description": "",
-	"Category": "Other",
+	"FriendlyName": "Widget Manager Service",
+	"Description": "Plugin to manage widgets quickly and easily.",
+	"Category": "UI Tool",
 	"CreatedBy": "Lucas Brum",
 	"CreatedByURL": "https://github.com/LuscasBrum",
-	"DocsURL": "https://github.com/LuscasBrum/WidgetManagerService",
+	"DocsURL": "https://docs.google.com/document/d/1yNad-14MynBwqCmeokyaulVLvdNTTTHyhr2Y5H6A_N0/edit?tab=t.0",
 	"MarketplaceURL": "",
-	"SupportURL": "",
+	"FabURL" : "com.epicgames.launcher://ue/Fab/a41f7705-e880-49cb-880e-ed5ef59f2d3f/",
+	"SupportURL": "https://github.com/LuscasBrum/WidgetManagerService",
+	"EngineVersion": "5.5.0",
 	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
-	"Installed": false,
+	"Installed": true,
 	"Modules": [
 		{
 			"Name": "WidgetManagerService",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
 		}
 	]
 }

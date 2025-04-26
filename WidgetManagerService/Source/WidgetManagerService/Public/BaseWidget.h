@@ -1,3 +1,5 @@
+// Copyright 2025 Lucas Brum. All rights reserved.
+
 #pragma once
 
 #include "CoreMinimal.h"

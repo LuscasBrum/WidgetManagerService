@@ -1,3 +1,5 @@
+// Copyright 2025 Lucas Brum. All rights reserved.
+
 #include "WidgetManagerService.h"
 
 #define LOCTEXT_NAMESPACE "FWidgetManagerServiceModule"

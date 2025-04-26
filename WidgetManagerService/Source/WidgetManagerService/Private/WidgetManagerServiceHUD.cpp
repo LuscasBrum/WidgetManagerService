@@ -1,6 +1,9 @@
+// Copyright 2025 Lucas Brum. All rights reserved.
+
 #include "WidgetManagerServiceHUD.h"
 #include "BaseWidget.h"
 #include "WidgetManagerGameSubsystem.h"
+#include "Engine/GameInstance.h"
 #include "Blueprint/UserWidget.h"
 
 void AWidgetManagerServiceHUD::BeginPlay()

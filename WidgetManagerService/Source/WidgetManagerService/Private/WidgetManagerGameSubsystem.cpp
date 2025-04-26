@@ -1,4 +1,5 @@
-// WidgetManagerGameSubsystem.cpp
+// Copyright 2025 Lucas Brum. All rights reserved.
+
 #include "WidgetManagerGameSubsystem.h"
 
 void UWidgetManagerGameSubsystem::RegisterWidget(UBaseWidget* Widget, int32 Layer)

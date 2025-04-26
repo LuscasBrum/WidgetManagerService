@@ -1,3 +1,5 @@
+// Copyright 2025 Lucas Brum. All rights reserved.
+
 #pragma once
 
 #include "CoreMinimal.h"
@@ -20,17 +22,20 @@ public:
     /** Activates a widget, deactivating others on the same layer. */
     void ActivateWidget(UBaseWidget* Widget);
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category = "WidgetManager")
     /** Activates a widget by class, deactivating others on the same layer. */
     void ActivateWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
 
-    UFUNCTION(BlueprintCallable)
+
     /** Disable a widget by class */
     void DisableWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
 
-    UFUNCTION(BlueprintCallable)
+    
+    UFUNCTION(BlueprintCallable, Category = "WidgetManager")
     /** Get a widget by class. */
     UBaseWidget* GetWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
+
+    UFUNCTION(BlueprintCallable, Category = "WidgetManager")
     UBaseWidget* GetSubWidgetByClass(TSubclassOf<UBaseWidget> WidgetClass);
 
     /** Cleans up invalid references to widgets. */

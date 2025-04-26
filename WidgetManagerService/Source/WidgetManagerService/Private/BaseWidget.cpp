@@ -1,3 +1,6 @@
+// Copyright 2025 Lucas Brum. All rights reserved.
+
+
 #include "BaseWidget.h"
 
 void UBaseWidget::SetActive(bool bActive)
