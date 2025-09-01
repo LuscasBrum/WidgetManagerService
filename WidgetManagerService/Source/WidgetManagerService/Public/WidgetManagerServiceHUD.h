@@ -1,5 +1,4 @@
-// Copyright 2025 Lucas Brum. All rights reserved.
-
+// WidgetManagerServiceHUD.h
 #pragma once
 
 #include "CoreMinimal.h"
